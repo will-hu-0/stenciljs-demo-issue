@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.number {
+  height: 2rem;
+  width: 15rem;
+  border: 1px lightblue solid;
+}
+
+.data-state {
+  opacity: 0;
+  display: none;
+}
+
+.data-state.loaded {
+  background-color: beige;
+  width: 15rem;
+  opacity: 1;
+  display: block;
+  transition:
+  opacity 0.3s linear,
+  visibility 0.3s linear;
+}
