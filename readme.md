@@ -1,20 +1,11 @@
 # Description
 
-Our projects get failed when upgrade the `stencil/core` from `4.23.0` to `4.23.2`, we encounter a bunch of errors `Cannot read properties of null (reading 'nodeType')` during pagination.
+The project upgrades `stencil/core` to `4.28.1`, the axios malfunctions
 
-I created this simple repository to reproduce it by using the latest version `4.24.0`.
-
-From the observation, it usually happens when the code something like
-
-```js
-@State() ifelse: boolean;
-
-....
-<div class={`ClassA ${this.ifelse ? 'ClassB' : 'ClassC'}`}>
-  {this.array.maps(x => (
-    ......
-  ))}
-</div>
+```
+index.js:100 TypeError: Cannot read properties of undefined (reading 'Z_SYNC_FLUSH')
+    at http.js:30:25
+consoleError	@	index.js:100
 ```
 
 Not sure what happened?
